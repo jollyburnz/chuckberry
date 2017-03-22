@@ -39,6 +39,7 @@ public void setup() {
   opc.ledGrid(960, 60, 8, width/2-spacing*8+offsetX, height/2+offsetY, spacing, spacing, PI*3/2, false);
   //opc.ledGrid(480, 60, 8, spacing*8+width/2, height*2, spacing, spacing, 0, false);
   opc.setColorCorrection(3.0, 0.7, 0.7, 0.7);
+  opc.setStatusLed(false);
 }
 
 void draw() {
