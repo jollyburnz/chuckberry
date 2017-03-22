@@ -20,8 +20,8 @@ public void setup() {
   
   println("gifAnimation " + Gif.version());
   // create the GifAnimation object for playback
-  loopingGif = new Gif(this, "berry2.gif");
-  //loopingGif.loop();
+  loopingGif = new Gif(this, "berry3.gif");
+  loopingGif.loop();
   //nonLoopingGif = new Gif(this, "lavalamp.gif");
   //nonLoopingGif.play();
   //nonLoopingGif.ignoreRepeat();
@@ -30,8 +30,14 @@ public void setup() {
   
   opc = new OPC(this, "127.0.0.1", 7890);
   
-  opc.ledGrid(0, 60, 8, width/2, height*2/4, 10, 10, 0, false);
-  opc.ledGrid(480, 60, 8, width/2, height*3/4, 10, 10, 0, false);
+  int spacing = 4;
+  int offsetX = -130;
+  int offsetY = 20;
+  
+  opc.ledGrid(480, 60, 8, width/2+spacing*8+offsetX, height/2+offsetY, spacing, spacing, PI*3/2, false);
+  opc.ledGrid(0, 60, 8, width/2+offsetX, height/2+offsetY, spacing, spacing, PI*3/2, false);
+  opc.ledGrid(960, 60, 8, width/2-spacing*8+offsetX, height/2+offsetY, spacing, spacing, PI*3/2, false);
+  //opc.ledGrid(480, 60, 8, spacing*8+width/2, height*2, spacing, spacing, 0, false);
   opc.setColorCorrection(3.0, 0.7, 0.7, 0.7);
 }
 
